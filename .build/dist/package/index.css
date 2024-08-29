@@ -1,0 +1,63 @@
+.comp_library_map {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.comp_library_map ul,
+.comp_library_map li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.comp_library_map .desc,
+.comp_library_map .item {
+  text-align: center;
+  font-size: 12px;
+  min-height: 20px;
+}
+.comp_library_map .head {
+  position: relative;
+  display: flex;
+}
+.comp_library_map .head .title {
+  flex: 2;
+}
+.comp_library_map .head .drilldown {
+  font-size: 14px;
+  padding: 0 15px;
+}
+.comp_library_map .tool {
+  cursor: pointer;
+  z-index: 10;
+}
+.comp_library_map .tool svg {
+  fill: slategrey;
+}
+.comp_library_map .reset {
+  width: 1em;
+  height: 1em;
+}
+.comp_library_map .body {
+  overflow: hidden;
+}
+.comp_library_map .body .map .idcline {
+  cursor: pointer;
+}
+.comp_library_map .footer {
+  text-align: center;
+}
+.comp_library_map .footer .hidden {
+  color: #cccccc;
+}
+.comp_library_map .footer .hidden .line {
+  border-color: #cccccc !important;
+}
+.comp_library_map .footer .item {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+.comp_library_map .footer .item .line {
+  position: relative;
+  top: 2px;
+}
