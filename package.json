@@ -19,6 +19,8 @@
     "@babel/preset-es2015": "^7.0.0-beta.53",
     "@babel/preset-react": "^7.24.7",
     "@babel/preset-stage-3": "^7.8.3",
+    "@types/node": "22.5.1",
+    "@types/node-fetch": "2.6.11",
     "@types/react": "18.3.4",
     "@types/react-dom": "18.3.0",
     "babel-cli": "^6.26.0",

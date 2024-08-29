@@ -18,6 +18,7 @@ export default class TimeSelectModel {
     this.format = param.formart || 'YYYY-MM-DD';
   }
 
+
   public formatValue(format: string) {
     const value = this.panelModel.getValue();
     return value?.formatValue(format) || '';

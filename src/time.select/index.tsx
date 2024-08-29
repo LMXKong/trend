@@ -5,7 +5,7 @@ import TimeSelectModel from './model';
 import { CalendarOutlined, CloseCircleOutlined } from '@ant-design/icons';
 import * as styles from './style.less';
 import { TimeRange } from './time.range';
-import { useEffect, useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import {DatePicker} from 'antd';
 
 console.log("styles", DatePicker)
