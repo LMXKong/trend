@@ -1,11 +1,22 @@
 const base = require('./webpack.base.config');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
-const webpack = require("webpack")
+const webpack = require("webpack");
+const { Configuration: DevServerConfiguration } = require("webpack-dev-server")
 
 const rootPath = path.resolve(__dirname, '../');
 const key = 'preview.index';
 base.entry[key] = `${rootPath}/preview/index.tsx`;
+
+
+const ACCESS_TOKEN_KEY = 'access_token';
+
+const onProxyReq = function (proxyReq, req) {
+  const accessToken = (req.headers||{})[ACCESS_TOKEN_KEY] || 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOjEsInVzciI6ImFkbWluIiwiZXhwaXJlX3RpbWUiOjE3MjUzNDQ5NTAyODJ9.TOWRXFWuwrsgGelUBYGtn6FSL4AjaDC1Pkjc4Fa-2DE';
+  proxyReq.setHeader('Authorization', `Bearer ${accessToken}`);
+  console.log(`[proxy] ${req.path} to ${proxyReq.host}${proxyReq.port}${(proxyReq.path || '').split('?')[0] || ''}`)
+}
+
 
 const config = {
   ...base,
@@ -23,8 +34,15 @@ const config = {
   ],
   devServer: {
     host: '0.0.0.0',
-    compress: true // 开启服务端压缩
-    // port: 8080
+    hot: true,
+    proxy: {
+      '/dev/api/*': {
+        target: 'http://10.66.79.72:8998',
+        pathRewrite: {'^/dev/api': ''},
+        changeOrigin: true,
+        onProxyReq,
+      },
+    }
   }
 }
 module.exports = config;

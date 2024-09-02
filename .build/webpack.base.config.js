@@ -1,6 +1,5 @@
 const path = require('path');
 const webpack = require('webpack');
-const autoprefixer = require('autoprefixer');
 
 
 const cssLoader = ['style-loader', 'css-loader'];
@@ -81,6 +80,7 @@ const config = {
       'src': path.resolve(rootPath, 'src'), // 指定 'src' 别名到项目的 src 目录
     },
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.less'],
-  },
+  }
 };
 module.exports = config;
+

@@ -9,6 +9,9 @@
     "dev": "webpack-dev-server --config .build/webpack.dev.config.js --mode development",
     "build": "rollup -c"
   },
+  "resolutions": {
+    "tslib": "^2.7.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.25.2",
     "@babel/plugin-proposal-class-properties": "^7.18.6",
@@ -21,7 +24,7 @@
     "@babel/preset-stage-3": "^7.8.3",
     "@types/node": "22.5.1",
     "@types/node-fetch": "2.6.11",
-    "@types/react": "18.3.4",
+    "@types/react": "18.3.5",
     "@types/react-dom": "18.3.0",
     "babel-cli": "^6.26.0",
     "babel-eslint": "^10.1.0",
@@ -33,7 +36,6 @@
     "cheerio": "^1.0.0",
     "compressing": "^1.10.1",
     "css-loader": "7.1.2",
-    "css-modules": "0.3.0",
     "eslint": "^9.9.1",
     "eslint-config-google": "^0.14.0",
     "eslint-loader": "^4.0.2",
@@ -55,7 +57,7 @@
     "uglifyjs-webpack-plugin": "2.2.0",
     "webpack": "^5.94.0",
     "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^5.0.4"
+    "webpack-dev-server": "^4.15.2"
   },
   "auto_publish": {
     "branchs": {
@@ -68,7 +70,6 @@
     "@rootcloud/rc-decorator": "0.0.2-beta.54",
     "@rootcloud/rc-i18n-cli": "0.2.23",
     "antd": "5.20.3",
-    "autoprefixer": "10.4.20",
     "dayjs": "1.11.13",
     "postcss-loader": "8.1.1",
     "react": "^18.3.1",

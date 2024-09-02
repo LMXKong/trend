@@ -14,10 +14,11 @@ function getRequestId() {
 class GlobalModel {
 
   onQuery?: Fetch;
-  
-  fetch: Fetch = (input: string | RequestInfo | URL, init?: RequestInit) => {
+
+  fetch: Fetch = (input: string | RequestInfo | URL, init?: RequestInit & { body: any}) => {
     let res;
     const headers = {
+      'Content-Type': 'application/json',
       ...(init?.headers || {}),
       "request-id": getRequestId()
     }
